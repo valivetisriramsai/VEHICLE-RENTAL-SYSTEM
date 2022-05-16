@@ -1,0 +1,668 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href=" https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap " rel="stylesheet">
+
+    <title>Carrentals.com </title>
+
+    <!-- Bootstrap core CSS -->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l " crossorigin="anonymous">
+
+
+
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'fontawesome.css '%}">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="stylesheet" href="{% static 'owl.css'%}">
+  </head>
+<style>
+h2 {
+  color:white;
+}
+p{
+  color:white;
+}
+</style>
+  <body>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+
+    <!-- ***** Preloader Start ***** -->
+   
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><h2>Vehicle Rental Website<em>.</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href=" / ">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href=" fleet ">Fleet</a>
+              </li>
+
+
+              {% if user.is_authenticated %}
+                <li> Hello,{{user.first_name}}</li>
+                <li class="nav-item">
+                <a class="nav-link" href="accounts/logout">Logout</a>
+              </li>
+              {% else %}
+                <li class="nav-item">
+                 <a class="nav-link" href="accounts/login">
+                <i style="font-size:24px" class="fa">&#xf23e;</i>&nbsp;Login</a> 
+                </li>
+
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href=" display">Bookings</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="aboutus">AboutUs</a>
+              </li>
+
+              
+              <li class="nav-item">
+                <a class="nav-link" href="contactus ">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     
+    </header>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="static/images/car 1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>AUDI</h2>
+        <p>FOR RENT  ₹ 500 PER DAY</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="static/images/Suzuki bike.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>SUZUKI</h2>
+        <p>FOR RENT  ₹ 600 PER DAY</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static/images/bus 2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>TATA</h2>
+        <p>FOR RENT  ₹ 1000 PER DAY</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+   
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="main-banner header-text">
+      <div class="container-fluid">
+        <div class="owl-banner owl-carousel">
+          <div class="item">
+            <img src=" {% static 'assets/images/product-1-720x480.jpg '%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href="{% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="{% static 'images/product-2-720x480.jpg '%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href="{% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="{% static 'images/product-3-720x480.jpg '%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href=" {% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="{% static ' images/product-4-720x480.jpg'%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href="{% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="{% static 'images/product-5-720x480.jpg'%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href=" {% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="{% static 'images/product-6-720x480.jpg '%}" alt="">
+            <div class="item-content">
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>
+                    <i class="fa fa-user"></i> 5 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-briefcase"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-sign-out"></i> 4 &nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-cog"></i> A
+                  </span>
+                </div>
+                <a href=" {% static 'fleet.html '%}"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <ul class="post-info">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus minima error doloribus aliquid, optio dignissimos sint earum! Eos, blanditiis repudiandae.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+ <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="all-blog-posts">
+          <h2 class="text-center">Offers</h2>
+          <br>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="static/images/bicycle1.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <strong>from</strong> <span> ₹200</span> <strong>per day</strong>
+                  <a ><h4>Hero Cycle</h4></a>
+                    <div class="post-options">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="static/images/bike1.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <strong>from</strong> <span> ₹500</span> <strong>per day</strong>
+                  <a ><h4>BMW & Avenger bikes</h4></a>
+                       <div class="post-options">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="static/images/car1.jpg" alt="">
+                </div>
+                <div class="down-content">
+                  <strong>from</strong> <span> ₹1000</span> <strong>per  day</strong>
+                  <a ><h4>BMW Combo</h4></a>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    {% block content %}
+    {% if chart %}
+        <img src="data:image/png;base64,{{chart | safe}}"
+    {% endif %}
+        {% endblock content %}
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="all-blog-posts">
+          <h2 class="text-center">Advantages <b> Vehicle Rentals</b></h2>
+          <br>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="{% static 'images/11.png '%}" alt="">
+                </div>
+                <div class="down-content">
+                 
+
+               
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="{% static 'images/14.png '%}" alt="">
+                </div>
+                <div class="down-content">
+                 
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="{% static 'images/13.png '%}" alt="">
+                </div>
+                <div class="down-content">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="blog-posts">
+      <div class="container">
+        <div class="sidebar-item comments">
+            <h2 class="text-center">Testimonials</h2>
+          <br>
+          <br>
+          <div class="content">
+            <ul>
+              <li>
+                <div class="author-thumb">
+                  <img src="static/images/about-2.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Rohith<span>10.07.2020</span></h4>
+                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="static/images/author-2.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Navya<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="static/images/agent-1.jpg" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Akash<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <br>
+          <br>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+  
+  
+    <section class="section-agents section-t8">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a"><u>Customer Feedback</u></h2>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-box-d">
+              <div class="card-img-d">
+                <img src="img/agent-1.jpg" alt="" class="img-d img-fluid">
+              </div>
+              <div class="card-overlay card-overlay-hover">
+                <div class="card-header-d">
+                  <div class="card-title-d align-self-center">
+                    <h3 class="title-d">
+                      <a class="link-two"><i>Akash
+                        <br> Kanyadhara</a></i>
+                    </h3>
+                  </div>
+                </div>
+                <div class="card-body-d">
+                  <a>
+                    Great price, service and very convenient.the car was clean and worked fine. It was great car rental experience.
+                  </a>
+                  <div class="info-agents color-a">
+                    <p>
+                      <strong>Phone: </strong> +91 96402 24356</p>
+                    <p>
+                      <strong>Email: </strong> akashkanyadhara@gmail.com</p>
+                  </div>
+                </div>
+                <div class="card-footer-d">
+                  <div class="socials-footer d-flex justify-content-center">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-d">
+              <div class="card-img-d">
+                <img src="img/agent-7.jpg" alt="" class="img-d img-fluid">
+              </div>
+              <div class="card-overlay card-overlay-hover">
+                <div class="card-header-d">
+                  <div class="card-title-d align-self-center">
+                    <h3 class="title-d">
+                      <a  class="link-two">Navya
+                        <br> Gattamaneni</a>
+                    </h3>
+                  </div>
+                </div>
+                <div class="card-body-d">
+                  <a>
+                    Very good car rental service provider company, very good services with comfortable cars.
+                  </a>
+                  <div class="info-agents color-a">
+                    <p>
+                      <strong>Phone: </strong> +91 95684 45234</p>
+                    <p>
+                      <strong>Email: </strong> mailfornavya@gmail.com</p>
+                  </div>
+                </div>
+                <div class="card-footer-d">
+                  <div class="socials-footer d-flex justify-content-center">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-box-d">
+              <div class="card-img-d">
+                <img src="img/agent-3.jpg" alt="" class="img-d img-fluid">
+              </div>
+              <div class="card-overlay card-overlay-hover">
+                <div class="card-header-d">
+                  <div class="card-title-d align-self-center">
+                    <h3 class="title-d">
+                      <a class="link-two">Keshav Krishna
+                        <br> Bayana</a>
+                    </h3>
+                  </div>
+                </div>
+                <div class="card-body-d">
+                  <a>
+                    Best service with good price, nice driver, nice vehicle overall very good. I will recommend to all of you.
+                </a>
+                  <div class="info-agents color-a">
+                    <p>
+                      <strong>Phone: </strong> +91 85366 45852</p>
+                    <p>
+                      <strong>Email: </strong> keshavkrisha@gmail.com</p>
+                  </div>
+                </div>
+                <div class="card-footer-d">
+                  <div class="socials-footer d-flex justify-content-center">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:6767744943080534016/">Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <p>
+                Copyright © 2020 Vehicle Rentals
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js '%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js '%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js '%}"></script>
+    <script src="{% static 'assets/js/owl.js" '%}></script>
+    <script src="{% static 'assets/js/slick.js '%}"></script>
+    <script src="{% static 'assets/js/isotope.js '%}"></script>
+    <script src="{% static 'assets/js/accordions.js '%}"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>

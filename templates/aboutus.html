@@ -1,0 +1,285 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href=" {% static 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap '%}" rel="stylesheet">
+
+    <title>Vehicle Rentals</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href=" {% static 'bootstrap/css/bootstrap.min.css '%}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href=" {% static 'css/fontawesome.css '%}">
+    <link rel="stylesheet" href="{% static 'css/style.css '%}">
+    <link rel="stylesheet" href="{% static 'css/owl.css '%}">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index"><h2>Vehicle Rental Website<em>.</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href=" / ">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="fleet">Fleet</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li> Hello,{{user.first_name}}</li>
+                <li class="nav-item">
+                <a class="nav-link" href="accounts/logout">Logout</a>
+              </li>
+              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="offers">Bookings</a>
+              </li>
+
+               </li>
+               <li class="nav-item">
+                <a class="nav-link" href=" aboutus ">Aboutus</a>
+              </li>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>about us</h4>
+                <h2>more about us!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+
+    <section class="about-us">
+      <div class="container">
+      	
+        <div class="row">
+          <div class="col-lg-12">
+            <img src=" {% static 'images/about-fullscreen-1-1920x700.jpg '%}" alt="">
+              </div>
+              
+  <p>We are Sriram,Siddhartha and Rohith created the vehicle rental system .In this first we edirects to the home page then you need to login if you doesnt 
+  having account you need to create the account.Then you need to choose which type of ental syste do you want
+  and we are providing two types of ental services one is bike rentals and car entals .You need to chhode
+  which type of rentals do you want and after you need to choose the one(bike/car) among the available.After
+  selecting car/bike you are redirecting to the payement page and after proceeding the payement your rental vehicle (bike/car) is successfully 
+  booked.</p>
+              </div>
+              <h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="static/images/sriram.jpg" alt="Sriram" style="width:100%">
+      <div class="container">
+        <h2>Sriram</h2>
+        <p class="title">Back end developer</p>
+        <p>I am responsible for the back end development and
+		playing the key role in the project</p>
+        <p>sriramsai003@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="static/images/siddartha.jpg" alt="Siddartha" style="width:100%">
+      <div class="container">
+        <h2>Siddhartha</h2>
+        <p class="title">Front end developer</p>
+        <p>I am responsible for the front end development and
+		playing the key role in the project</p>
+        <p>siddharthainturu@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="rohith.jpeg" alt="rohith" style="width:100%">
+      <div class="container">
+        <h2>Rohith</h2>
+        <p class="title">Mean stack Developer</p>
+        <p>I am responsible for the mean stack development and
+		playing the key role in the project</p>
+        <p>rohithgaddam@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    
+ 
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:6767744943080534016/">Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <p>
+                Copyright © 2020 Vehicle Rentals
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src=" {% static 'jquery/jquery.min.js '%}"></script>
+    <script src=" {% static 'bootstrap/js/bootstrap.bundle.min.js '%}"></script>
+
+    <!-- Additional Scripts -->
+    <script src=" {% static 'js/custom.js'%}"></script>
+    <script src="{% static 'js/owl.js'%}"></script>
+    <script src="{% static 'js/slick.js'%}"></script>
+    <script src="{% static 'js/isotope.js'%}"></script>
+    <script src="{% static 'js/accordions.js'%}"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
